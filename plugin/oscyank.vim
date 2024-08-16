@@ -7,7 +7,7 @@ let g:loaded_oscyank = 1
 " -------------------- VARIABLES ---------------------------
 let s:commands = {
   \ 'operator': {'block': '`[\<C-v>`]y', 'char': '`[v`]y', 'line': "'[V']y"},
-  \ 'visual': {'': 'gvy', 'V': 'gvy', 'v': 'gvy', '': 'gvy'}}
+  \ 'visual': {'V': 'gvy', 'v': 'gvy', '': 'gvy'}}
 let s:b64_table = [
   \ 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
   \ 'Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f',
@@ -61,15 +61,15 @@ function s:encode_b64(str, size)
     let b64[-1] = '='
   endif
 
-  let b64 = join(b64, '')
+  let s64 = join(b64, '')
   if a:size <= 0
-    return b64
+    return s64
   endif
 
   let chunked = ''
-  while strlen(b64) > 0
-    let chunked .= strpart(b64, 0, a:size) . "\n"
-    let b64 = strpart(b64, a:size)
+  while strlen(s64) > 0
+    let chunked .= strpart(s64, 0, a:size) . "\n"
+    let s64 = strpart(s64, a:size)
   endwhile
 
   return chunked
