@@ -40,7 +40,7 @@ Feel free to add terminals to this list by submitting a pull request.
 ## Installation
 With [vim-plug](https://github.com/junegunn/vim-plug) for instance:
 ```vim
-Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+Plug 'zhangzz21/vim-oscyank', {'branch': 'main'}
 ```
 
 **If you are using tmux**, run these steps first: [enabling OSC52 in
